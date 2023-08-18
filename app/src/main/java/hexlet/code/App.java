@@ -35,11 +35,11 @@ public class App {
                 Engine.gameContinuous();
                 break;
             case "5":
-                Engine.gameName = Progression.condition;
+                Engine.gameName = Progression.getCondition();
                 Engine.gameContinuous();
                 break;
             case "6":
-                Engine.gameName = Prime.condition;
+                Engine.gameName = Prime.getCondition();
                 Engine.gameContinuous();
                 break;
             default:

@@ -3,13 +3,21 @@ package hexlet.code.games;
 import org.apache.commons.lang3.RandomUtils;
 
 public class Progression {
-    public static String condition = "What number is missing in the progression?";
+    private static String condition = "What number is missing in the progression?";
+
+    public static String getCondition() {
+        return condition;
+    }
 
     public static String missingNum;
     public static String question() {
 
-        int length = RandomUtils.nextInt(5, 11);
-        int step = RandomUtils.nextInt(1, 20);
+        int minLen = 5;
+        int maxLen = 11;
+        int minStep = 1;
+        int maxStep = 20;
+        int length = RandomUtils.nextInt(minLen, maxLen);
+        int step = RandomUtils.nextInt(minStep, maxStep);
         int result = step;
         int missingNumIndex = RandomUtils.nextInt(0, length - 1);
         String[] array = new String[length];
