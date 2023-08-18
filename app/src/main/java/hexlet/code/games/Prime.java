@@ -12,9 +12,11 @@ public class Prime {
         int maxNum = 99;
         int randomNum = RandomUtils.nextInt(minNum, maxNum);
         System.out.println("Question: " + randomNum);
-        if(randomNum < 2) return "no";
-        for(int i = 2; i < randomNum / 2; i++) {
-            if(randomNum % i == 0) {
+        if (randomNum < 2) {
+            return "no";
+        }
+        for (int i = 2; i < randomNum / 2; i++) {
+            if (randomNum % i == 0) {
                 return "no";
             }
         }
