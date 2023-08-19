@@ -27,23 +27,23 @@ public class App {
                 Cli.greetings();
                 break;
             case "2":
-                Engine.gameName = Even.getCondition();
+                Engine.setGameName(Even.getCondition());
                 Engine.gameContinuous();
                 break;
             case "3":
-                Engine.gameName = Calc.getCondition();
+                Engine.setGameName(Calc.getCondition());
                 Engine.gameContinuous();
                 break;
             case "4":
-                Engine.gameName = Gcd.getCondition();
+                Engine.setGameName(Gcd.getCondition());
                 Engine.gameContinuous();
                 break;
             case "5":
-                Engine.gameName = Progression.getCondition();
+                Engine.setGameName(Progression.getCondition());
                 Engine.gameContinuous();
                 break;
             case "6":
-                Engine.gameName = Prime.getCondition();
+                Engine.setGameName(Prime.getCondition());
                 Engine.gameContinuous();
                 break;
             default:

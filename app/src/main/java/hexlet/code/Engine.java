@@ -9,13 +9,22 @@ import hexlet.code.games.Progression;
 import java.util.Scanner;
 
 public class Engine {
-    static String gameName;
+    private static String gameName;
+
+    public static String getGameName() {
+        return gameName;
+    }
+
+    public static void setGameName(String gameName) {
+        Engine.gameName = gameName;
+    }
+
     public static void gameContinuous() {
         int countOfCorrect = 0;
         String expected;
         final String name = Cli.greetings();
         final int maxCorrect = 3;
-        System.out.println(gameName);
+        System.out.println(getGameName());
         while (countOfCorrect < maxCorrect) {
             expected = gameStart();
             System.out.print("Your answer: ");
