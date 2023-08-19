@@ -3,6 +3,7 @@ package hexlet.code;
 import hexlet.code.games.*;
 
 import java.util.Scanner;
+
 public class Engine {
     static int countOfCorrect = 0;
     static String name = Cli.greetings();

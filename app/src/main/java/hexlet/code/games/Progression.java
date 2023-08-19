@@ -12,10 +12,10 @@ public class Progression {
     public static String missingNum;
     public static String question() {
 
-        int minLen = 5;
-        int maxLen = 11;
-        int minStep = 1;
-        int maxStep = 20;
+        final int minLen = 5;
+        final int maxLen = 11;
+        final int minStep = 1;
+        final int maxStep = 20;
         int length = RandomUtils.nextInt(minLen, maxLen);
         int step = RandomUtils.nextInt(minStep, maxStep);
         int result = step;

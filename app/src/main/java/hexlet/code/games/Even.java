@@ -9,7 +9,9 @@ public class Even {
 
     private static String condition = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     public static String question() {
-        int randomNum = RandomUtils.nextInt(1, 99);
+        final int minNumber = 1;
+        final int maxNumber = 100;
+        int randomNum = RandomUtils.nextInt(minNumber, maxNumber);
         System.out.println("Question: " + randomNum);
         if (randomNum % 2 == 0) {
             return "yes";

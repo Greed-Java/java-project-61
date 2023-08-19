@@ -8,8 +8,8 @@ public class Prime {
     }
     private static String condition = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     public static String question() {
-        int minNum = 1;
-        int maxNum = 99;
+        final int minNum = 1;
+        final int maxNum = 99;
         int randomNum = RandomUtils.nextInt(minNum, maxNum);
         System.out.println("Question: " + randomNum);
         if (randomNum < 2) {

@@ -8,9 +8,13 @@ public class Calc {
 
     private static String condition = "What is the result of the expression?";
     public static String question() {
-        int a = RandomUtils.nextInt(1, 100);
-        int b = RandomUtils.nextInt(1, 100);
-        int operand = RandomUtils.nextInt(1, 4);
+        final int minNumber = 1;
+        final int maxNumber = 100;
+        final int minOper = 1;
+        final int maxOper = 4;
+        int a = RandomUtils.nextInt(minNumber, maxNumber);
+        int b = RandomUtils.nextInt(minNumber, maxNumber);
+        int operand = RandomUtils.nextInt(minOper, maxOper);
 
         switch (operand) {
             case 1:
