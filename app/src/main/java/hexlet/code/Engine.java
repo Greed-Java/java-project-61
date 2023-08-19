@@ -9,13 +9,14 @@ import hexlet.code.games.Progression;
 import java.util.Scanner;
 
 public class Engine {
-    static int countOfCorrect = 0;
-    static String name = Cli.greetings();
-    static String expected;
+    static private int countOfCorrect = 0;
+    static private String name = Cli.greetings();
+    static private String expected;
     static String gameName;
     public static void gameContinuous() {
+        final int maxCorrect = 3;
         System.out.println(gameName);
-        while (countOfCorrect < 3) {
+        while (countOfCorrect < maxCorrect) {
             expected = gameStart();
             System.out.print("Your answer: ");
             Scanner scanner = new Scanner(System.in);
@@ -30,7 +31,7 @@ public class Engine {
                 break;
             }
         }
-        if (countOfCorrect == 3) {
+        if (countOfCorrect == maxCorrect) {
             System.out.println("Congratulations, " + name + "!");
         }
     }
