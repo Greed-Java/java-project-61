@@ -15,8 +15,8 @@ public class Engine {
         return gameName;
     }
 
-    public static void setGameName(String gameName) {
-        Engine.gameName = gameName;
+    public static void setGameName(String name) {
+        Engine.gameName = name;
     }
 
     public static void gameContinuous() {
