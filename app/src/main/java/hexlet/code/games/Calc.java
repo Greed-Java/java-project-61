@@ -16,16 +16,15 @@ public class Calc {
         int b = RandomUtils.nextInt(minNumber, maxNumber);
         int operand = RandomUtils.nextInt(minOper, maxOper);
 
-        switch (operand) {
-            case 1:
-                System.out.println("Question: " + a + " + " + b);
-                return Integer.toString(a + b);
-            case 2:
-                System.out.println("Question: " + a + " - " + b);
-                return Integer.toString(a - b);
-            case 3:
-                System.out.println("Question: " + a + " * " + b);
-                return Integer.toString(a * b);
-        } return "Error";
+        if (operand == 1) {
+            System.out.println("Question: " + a + " + " + b);
+            return Integer.toString(a + b);
+        } else if (operand == 2) {
+            System.out.println("Question: " + a + " - " + b);
+            return Integer.toString(a - b);
+        } else {
+            System.out.println("Question: " + a + " * " + b);
+            return Integer.toString(a * b);
+        }
     }
 }

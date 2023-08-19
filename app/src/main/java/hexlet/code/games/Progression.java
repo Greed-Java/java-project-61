@@ -9,9 +9,10 @@ public class Progression {
         return condition;
     }
 
-    public static String missingNum;
+    //public static String missingNum;
     public static String question() {
 
+        String missingNum = null;
         final int minLen = 5;
         final int maxLen = 11;
         final int minStep = 1;
