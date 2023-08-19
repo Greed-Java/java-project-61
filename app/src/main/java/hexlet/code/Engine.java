@@ -47,6 +47,7 @@ public class Engine {
                 return Progression.question();
             case "Answer 'yes' if given number is prime. Otherwise answer 'no'.":
                 return Prime.question();
-        } return null;
+            default: return "Error";
+        }
     }
 }
