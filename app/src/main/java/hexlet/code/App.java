@@ -23,15 +23,15 @@ public class App {
                 Cli.greetings();
                 break;
             case "2":
-                Engine.gameName = Even.condition;
+                Engine.gameName = Even.getCondition();
                 Engine.gameContinuous();
                 break;
             case "3":
-                Engine.gameName = Calc.condition;
+                Engine.gameName = Calc.getCondition();
                 Engine.gameContinuous();
                 break;
             case "4":
-                Engine.gameName = Gcd.condition;
+                Engine.gameName = Gcd.getCondition();
                 Engine.gameContinuous();
                 break;
             case "5":

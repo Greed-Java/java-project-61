@@ -3,7 +3,11 @@ package hexlet.code.games;
 import org.apache.commons.lang3.RandomUtils;
 
 public class Gcd {
-    public static String condition = "Find the greatest common divisor of given numbers.";
+    public static String getCondition() {
+        return condition;
+    }
+
+    private static String condition = "Find the greatest common divisor of given numbers.";
     public static String question() {
         int a = RandomUtils.nextInt(1, 100);
         int b = RandomUtils.nextInt(1, 100);
