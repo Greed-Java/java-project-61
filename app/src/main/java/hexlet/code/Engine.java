@@ -10,10 +10,10 @@ import java.util.Scanner;
 
 public class Engine {
     static private int countOfCorrect = 0;
-    static private String name = Cli.greetings();
-    static private String expected;
     static String gameName;
     public static void gameContinuous() {
+        String expected;
+        final String name = Cli.greetings();
         final int maxCorrect = 3;
         System.out.println(gameName);
         while (countOfCorrect < maxCorrect) {
