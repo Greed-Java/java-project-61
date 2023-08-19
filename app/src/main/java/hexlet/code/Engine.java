@@ -9,9 +9,9 @@ import hexlet.code.games.Progression;
 import java.util.Scanner;
 
 public class Engine {
-    static private int countOfCorrect = 0;
     static String gameName;
     public static void gameContinuous() {
+        int countOfCorrect = 0;
         String expected;
         final String name = Cli.greetings();
         final int maxCorrect = 3;
