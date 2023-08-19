@@ -7,7 +7,7 @@ public class Gcd {
         return condition;
     }
 
-    private final static String condition = "Find the greatest common divisor of given numbers.";
+    private static String condition = "Find the greatest common divisor of given numbers.";
     public static String question() {
         final int minNumber = 1;
         final int maxNumber = 100;

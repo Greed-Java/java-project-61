@@ -6,7 +6,7 @@ public class Prime {
     public static String getCondition() {
         return condition;
     }
-    private final static String condition = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    private static String condition = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     public static String question() {
         final int minNum = 1;
         final int maxNum = 99;

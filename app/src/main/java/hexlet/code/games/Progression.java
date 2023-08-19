@@ -3,7 +3,7 @@ package hexlet.code.games;
 import org.apache.commons.lang3.RandomUtils;
 
 public class Progression {
-    private final static String condition = "What number is missing in the progression?";
+    private static String condition = "What number is missing in the progression?";
 
     public static String getCondition() {
         return condition;

@@ -7,7 +7,7 @@ public class Even {
         return condition;
     }
 
-    private final static String condition = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    private static String condition = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     public static String question() {
         final int minNumber = 1;
         final int maxNumber = 100;

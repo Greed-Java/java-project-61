@@ -6,7 +6,7 @@ public class Calc {
         return condition;
     }
 
-    private final static String condition = "What is the result of the expression?";
+    private static String condition = "What is the result of the expression?";
     public static String question() {
         final int minNumber = 1;
         final int maxNumber = 100;
