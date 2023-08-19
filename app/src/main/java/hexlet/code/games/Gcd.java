@@ -9,8 +9,10 @@ public class Gcd {
 
     private static String condition = "Find the greatest common divisor of given numbers.";
     public static String question() {
-        int a = RandomUtils.nextInt(1, 100);
-        int b = RandomUtils.nextInt(1, 100);
+        final int minNumber = 1;
+        final int maxNumber = 100;
+        int a = RandomUtils.nextInt(minNumber, maxNumber);
+        int b = RandomUtils.nextInt(minNumber, maxNumber);
         System.out.println("Question: " + a + " " + b);
         return Integer.toString(gcd(a, b));
     }
