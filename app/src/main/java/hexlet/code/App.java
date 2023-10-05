@@ -1,11 +1,5 @@
 package hexlet.code;
-
-import hexlet.code.games.Calc;
-import hexlet.code.games.Even;
-import hexlet.code.games.Gcd;
-import hexlet.code.games.Prime;
-import hexlet.code.games.Progression;
-
+import hexlet.code.games.*;
 import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
@@ -27,24 +21,19 @@ public class App {
                 Cli.greetings();
                 break;
             case "2":
-                Engine.setGameName(Even.getCondition());
-                Engine.gameContinuous();
+                Engine.gameContinuous(Even.getCondition(), Even.getQuestionAndAnswer());
                 break;
             case "3":
-                Engine.setGameName(Calc.getCondition());
-                Engine.gameContinuous();
+                Engine.gameContinuous(Calc.getCondition(), Calc.getQuestionAndAnswer());
                 break;
             case "4":
-                Engine.setGameName(Gcd.getCondition());
-                Engine.gameContinuous();
+                Engine.gameContinuous(Gcd.getCondition(), Gcd.getQuestionAndAnswer());
                 break;
             case "5":
-                Engine.setGameName(Progression.getCondition());
-                Engine.gameContinuous();
+                Engine.gameContinuous(Progression.getCondition(), Progression.getQuestionAndAnswer());
                 break;
             case "6":
-                Engine.setGameName(Prime.getCondition());
-                Engine.gameContinuous();
+                Engine.gameContinuous(Prime.getCondition(), Prime.getQuestionAndAnswer());
                 break;
             default:
                 System.out.println("Error!");

@@ -7,16 +7,23 @@ public class Prime {
         return condition;
     }
     private static String condition = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-    public static String question() {
-        final int minNum = 1;
-        final int maxNum = 99;
-        int randomNum = RandomUtils.nextInt(minNum, maxNum);
-        System.out.println("Question: " + randomNum);
-        if (randomNum < 2) {
+    public static String[][] getQuestionAndAnswer() {
+        String[][] result = new String[3][2];
+        for (var row : result) {
+            final int minNum = 1;
+            final int maxNum = 99;
+            int randomNum = RandomUtils.nextInt(minNum, maxNum);
+            row[0] = Integer.toString(randomNum);
+            row[1] = isPrime(randomNum);
+        }
+        return result;
+    }
+    public static String isPrime(int num) {
+        if (num < 2) {
             return "no";
         }
-        for (int i = 2; i < randomNum / 2; i++) {
-            if (randomNum % i == 0) {
+        for (int i = 2; i < num / 2; i++) {
+            if (num % i == 0) {
                 return "no";
             }
         }

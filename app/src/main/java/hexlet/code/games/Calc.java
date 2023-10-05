@@ -5,26 +5,33 @@ public class Calc {
     public static String getCondition() {
         return condition;
     }
-
     private static String condition = "What is the result of the expression?";
-    public static String question() {
-        final int minNumber = 1;
-        final int maxNumber = 100;
-        final int minOper = 1;
-        final int maxOper = 4;
-        int a = RandomUtils.nextInt(minNumber, maxNumber);
-        int b = RandomUtils.nextInt(minNumber, maxNumber);
-        int operand = RandomUtils.nextInt(minOper, maxOper);
-
-        if (operand == 1) {
-            System.out.println("Question: " + a + " + " + b);
-            return Integer.toString(a + b);
-        } else if (operand == 2) {
-            System.out.println("Question: " + a + " - " + b);
-            return Integer.toString(a - b);
-        } else {
-            System.out.println("Question: " + a + " * " + b);
-            return Integer.toString(a * b);
+    public static String[][] getQuestionAndAnswer() {
+        String[][] result = new String[3][2];
+        for (var row : result) {
+            final int minNumber = 1;
+            final int maxNumber = 100;
+            final int minOper = 0;
+            final int maxOper = 3;
+            int a = RandomUtils.nextInt(minNumber, maxNumber);
+            int b = RandomUtils.nextInt(minNumber, maxNumber);
+            int indexOperator = RandomUtils.nextInt(minOper, maxOper);
+            String[] operators = {" + ", " - ", " * "};
+            switch (indexOperator) {
+                case 0:
+                    row[0] = a + operators[indexOperator] + b;
+                    row[1] = Integer.toString(a + b);
+                    break;
+                case 1:
+                    row[0] = a + operators[indexOperator] + b;
+                    row[1] = Integer.toString(a - b);
+                    break;
+                case 2:
+                    row[0] = a + operators[indexOperator] + b;
+                    row[1] = Integer.toString(a * b);
+                    break;
+            }
         }
+        return result;
     }
 }
