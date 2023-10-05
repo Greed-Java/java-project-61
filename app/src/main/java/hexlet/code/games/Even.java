@@ -8,13 +8,15 @@ public class Even {
     }
     private static String condition = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     public static String[][] getQuestionAndAnswer() {
-        String[][] result = new String[3][2];
+        final int rows = 3;
+        final int columns = 2;
+        String[][] result = new String[rows][columns];
+        final int minNumber = 1;
+        final int maxNumber = 100;
         for (var row : result) {
-            final int minNumber = 1;
-            final int maxNumber = 100;
             int randomNum = RandomUtils.nextInt(minNumber, maxNumber);
             row[0] = Integer.toString(randomNum);
-            row[1] = randomNum % 2 == 0? "yes" : "no";
+            row[1] = randomNum % 2 == 0 ? "yes" : "no";
         }
         return result;
     }

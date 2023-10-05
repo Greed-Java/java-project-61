@@ -8,10 +8,12 @@ public class Prime {
     }
     private static String condition = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     public static String[][] getQuestionAndAnswer() {
-        String[][] result = new String[3][2];
+        final int rows = 3;
+        final int columns = 2;
+        String[][] result = new String[rows][columns];
+        final int minNum = 1;
+        final int maxNum = 99;
         for (var row : result) {
-            final int minNum = 1;
-            final int maxNum = 99;
             int randomNum = RandomUtils.nextInt(minNum, maxNum);
             row[0] = Integer.toString(randomNum);
             row[1] = isPrime(randomNum);

@@ -8,10 +8,12 @@ public class Gcd {
     }
     private static String condition = "Find the greatest common divisor of given numbers.";
     public static String[][] getQuestionAndAnswer() {
-        String[][] result = new String[3][2];
+        final int rows = 3;
+        final int columns = 2;
+        String[][] result = new String[rows][columns];
+        final int minNumber = 1;
+        final int maxNumber = 100;
         for (var row : result) {
-            final int minNumber = 1;
-            final int maxNumber = 100;
             int a = RandomUtils.nextInt(minNumber, maxNumber);
             int b = RandomUtils.nextInt(minNumber, maxNumber);
             row[0] = a + " " + b;

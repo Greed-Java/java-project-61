@@ -7,12 +7,14 @@ public class Calc {
     }
     private static String condition = "What is the result of the expression?";
     public static String[][] getQuestionAndAnswer() {
-        String[][] result = new String[3][2];
+        final int minNumber = 1;
+        final int maxNumber = 100;
+        final int minOper = 0;
+        final int maxOper = 3;
+        final int rows = 3;
+        final int columns = 2;
+        String[][] result = new String[rows][columns];
         for (var row : result) {
-            final int minNumber = 1;
-            final int maxNumber = 100;
-            final int minOper = 0;
-            final int maxOper = 3;
             int a = RandomUtils.nextInt(minNumber, maxNumber);
             int b = RandomUtils.nextInt(minNumber, maxNumber);
             int indexOperator = RandomUtils.nextInt(minOper, maxOper);
@@ -30,6 +32,7 @@ public class Calc {
                     row[0] = a + operators[indexOperator] + b;
                     row[1] = Integer.toString(a * b);
                     break;
+                default:
             }
         }
         return result;

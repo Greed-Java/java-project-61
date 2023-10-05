@@ -8,13 +8,15 @@ public class Progression {
         return condition;
     }
     public static String[][] getQuestionAndAnswer() {
-        String[][] result = new String[3][2];
+        final int rows = 3;
+        final int columns = 2;
+        String[][] result = new String[rows][columns];
+        String missingNum = null;
+        final int minLen = 5;
+        final int maxLen = 11;
+        final int minStep = 1;
+        final int maxStep = 20;
         for (var row : result) {
-            String missingNum = null;
-            final int minLen = 5;
-            final int maxLen = 11;
-            final int minStep = 1;
-            final int maxStep = 20;
             int length = RandomUtils.nextInt(minLen, maxLen);
             int step = RandomUtils.nextInt(minStep, maxStep);
             int num = step;
