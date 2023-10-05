@@ -6,6 +6,7 @@ public class Engine {
     public static void gameContinuous(String condition, String[][] questionAndAnswer) {
         int countOfCorrect = 0;
         final String name = Cli.greetings();
+        final int maxCountOfCorrect = 3;
         System.out.println(condition);
         for (var row : questionAndAnswer) {
             System.out.println("Question: " + row[0]);
@@ -21,7 +22,7 @@ public class Engine {
                 break;
             }
         }
-        if (countOfCorrect == 3) {
+        if (countOfCorrect == maxCountOfCorrect) {
             System.out.println("Congratulations, " + name + "!");
         }
     }
