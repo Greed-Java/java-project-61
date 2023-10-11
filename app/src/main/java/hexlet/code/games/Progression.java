@@ -11,13 +11,13 @@ public class Progression {
     public static String[][] getQuestionAndAnswer() {
         String[][] result = new String[Data.ROWS][Data.COLUMNS];
         String missingNum;
-        final int MINLEN = 5;
-        final int MAXLEN = 11;
-        final int MINSTEP = 1;
-        final int MAXSTEP = 20;
+        final int minLen = 5;
+        final int maxLen = 11;
+        final int minStep = 1;
+        final int maxStep = 20;
         for (var row : result) {
-            int length = RandomUtils.nextInt(MINLEN, MAXLEN);
-            int step = RandomUtils.nextInt(MINSTEP, MAXSTEP);
+            int length = RandomUtils.nextInt(minLen, maxLen);
+            int step = RandomUtils.nextInt(minStep, maxStep);
             int initial = step;
             int missingNumIndex = RandomUtils.nextInt(0, length - 1);
             String[] array = getProgression(initial, step, length);

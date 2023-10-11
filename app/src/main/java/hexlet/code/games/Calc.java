@@ -9,13 +9,13 @@ public class Calc {
     }
     private static String condition = "What is the result of the expression?";
     public static String[][] getQuestionAndAnswer() {
-        final int MINOPER = 0;
-        final int MAXOPER = 3;
+        final int minOper = 0;
+        final int maxOper = 3;
         String[][] result = new String[Data.ROWS][Data.COLUMNS];
         for (var row : result) {
             int a = RandomUtils.nextInt(Data.MIN_NUM, Data.MAX_NUM);
             int b = RandomUtils.nextInt(Data.MIN_NUM, Data.MAX_NUM);
-            int indexOperator = RandomUtils.nextInt(MINOPER, MAXOPER);
+            int indexOperator = RandomUtils.nextInt(minOper, maxOper);
             String[] operators = {" + ", " - ", " * "};
             row[0] = a + operators[indexOperator] + b;
             row[1] = Integer.toString(getAnswer(a, b, operators[indexOperator]));
