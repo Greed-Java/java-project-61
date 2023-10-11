@@ -1,5 +1,6 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
 import org.apache.commons.lang3.RandomUtils;
 
 public class Prime {
@@ -8,13 +9,9 @@ public class Prime {
     }
     private static String condition = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     public static String[][] getQuestionAndAnswer() {
-        final int rows = 3;
-        final int columns = 2;
-        String[][] result = new String[rows][columns];
-        final int minNum = 1;
-        final int maxNum = 99;
+        String[][] result = new String[Data.ROWS][Data.COLUMNS];
         for (var row : result) {
-            int randomNum = RandomUtils.nextInt(minNum, maxNum);
+            int randomNum = RandomUtils.nextInt(Data.MIN_NUM, Data.MAX_NUM);
             row[0] = Integer.toString(randomNum);
             row[1] = isPrime(randomNum);
         }
@@ -30,5 +27,8 @@ public class Prime {
             }
         }
         return "yes";
+    }
+    public static void runGame() {
+        Engine.gameContinuous(Prime.getCondition(), Prime.getQuestionAndAnswer());
     }
 }

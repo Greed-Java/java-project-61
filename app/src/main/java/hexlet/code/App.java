@@ -26,19 +26,19 @@ public class App {
                 Cli.greetings();
                 break;
             case "2":
-                Engine.gameContinuous(Even.getCondition(), Even.getQuestionAndAnswer());
+                Even.runGame();
                 break;
             case "3":
-                Engine.gameContinuous(Calc.getCondition(), Calc.getQuestionAndAnswer());
+                Calc.runGame();
                 break;
             case "4":
-                Engine.gameContinuous(Gcd.getCondition(), Gcd.getQuestionAndAnswer());
+                Gcd.runGame();
                 break;
             case "5":
-                Engine.gameContinuous(Progression.getCondition(), Progression.getQuestionAndAnswer());
+                Progression.runGame();
                 break;
             case "6":
-                Engine.gameContinuous(Prime.getCondition(), Prime.getQuestionAndAnswer());
+                Prime.runGame();
                 break;
             default:
                 System.out.println("Error!");

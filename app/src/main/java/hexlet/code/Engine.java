@@ -4,26 +4,20 @@ import java.util.Scanner;
 
 public class Engine {
     public static void gameContinuous(String condition, String[][] questionAndAnswer) {
-        int countOfCorrect = 0;
         final String name = Cli.greetings();
-        final int maxCountOfCorrect = 3;
         System.out.println(condition);
         for (var row : questionAndAnswer) {
             System.out.println("Question: " + row[0]);
             System.out.print("Your answer: ");
             Scanner scanner = new Scanner(System.in);
             String answer = scanner.next();
-            if (answer.equals(row[1])) {
-                System.out.println("Correct!");
-                countOfCorrect++;
-            } else {
+            if (!answer.equals(row[1])) {
                 System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + row[1] + "'.");
                 System.out.println("Let's try again, " + name + "!");
-                break;
+                return;
             }
+            System.out.println("Correct!");
         }
-        if (countOfCorrect == maxCountOfCorrect) {
-            System.out.println("Congratulations, " + name + "!");
-        }
+        System.out.println("Congratulations, " + name + "!");
     }
 }

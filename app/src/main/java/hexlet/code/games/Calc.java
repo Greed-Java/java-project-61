@@ -1,40 +1,39 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
 import org.apache.commons.lang3.RandomUtils;
+
 public class Calc {
     public static String getCondition() {
         return condition;
     }
     private static String condition = "What is the result of the expression?";
     public static String[][] getQuestionAndAnswer() {
-        final int minNumber = 1;
-        final int maxNumber = 100;
-        final int minOper = 0;
-        final int maxOper = 3;
-        final int rows = 3;
-        final int columns = 2;
-        String[][] result = new String[rows][columns];
+        final int MIN_OPER = 0;
+        final int MAX_OPER = 3;
+        String[][] result = new String[Data.ROWS][Data.COLUMNS];
         for (var row : result) {
-            int a = RandomUtils.nextInt(minNumber, maxNumber);
-            int b = RandomUtils.nextInt(minNumber, maxNumber);
-            int indexOperator = RandomUtils.nextInt(minOper, maxOper);
+            int a = RandomUtils.nextInt(Data.MIN_NUM, Data.MAX_NUM);
+            int b = RandomUtils.nextInt(Data.MIN_NUM, Data.MAX_NUM);
+            int indexOperator = RandomUtils.nextInt(MIN_OPER, MAX_OPER);
             String[] operators = {" + ", " - ", " * "};
-            switch (indexOperator) {
-                case 0:
-                    row[0] = a + operators[indexOperator] + b;
-                    row[1] = Integer.toString(a + b);
-                    break;
-                case 1:
-                    row[0] = a + operators[indexOperator] + b;
-                    row[1] = Integer.toString(a - b);
-                    break;
-                case 2:
-                    row[0] = a + operators[indexOperator] + b;
-                    row[1] = Integer.toString(a * b);
-                    break;
-                default:
-            }
+            row[0] = a + operators[indexOperator] + b;
+            row[1] = Integer.toString(getAnswer(a, b, operators[indexOperator]));
         }
         return result;
+    }
+    public static int getAnswer(int number1, int number2, String operator) {
+        switch (operator) {
+            case " + ":
+                return number1 + number2;
+            case " - ":
+                return number1 - number2;
+            case " * ":
+                return number1 * number2;
+            default: return 0;
+        }
+    }
+    public static void runGame() {
+        Engine.gameContinuous(Calc.getCondition(), Calc.getQuestionAndAnswer());
     }
 }

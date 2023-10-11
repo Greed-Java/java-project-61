@@ -1,5 +1,6 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
 import org.apache.commons.lang3.RandomUtils;
 
 public class Gcd {
@@ -8,14 +9,10 @@ public class Gcd {
     }
     private static String condition = "Find the greatest common divisor of given numbers.";
     public static String[][] getQuestionAndAnswer() {
-        final int rows = 3;
-        final int columns = 2;
-        String[][] result = new String[rows][columns];
-        final int minNumber = 1;
-        final int maxNumber = 100;
+        String[][] result = new String[Data.ROWS][Data.COLUMNS];
         for (var row : result) {
-            int a = RandomUtils.nextInt(minNumber, maxNumber);
-            int b = RandomUtils.nextInt(minNumber, maxNumber);
+            int a = RandomUtils.nextInt(Data.MIN_NUM, Data.MAX_NUM);
+            int b = RandomUtils.nextInt(Data.MIN_NUM, Data.MAX_NUM);
             row[0] = a + " " + b;
             row[1] = Integer.toString(gcd(a, b));
         }
@@ -26,5 +23,8 @@ public class Gcd {
             return num1;
         }
         return gcd(num2, num1 % num2);
+    }
+    public static void runGame() {
+        Engine.gameContinuous(Gcd.getCondition(), Gcd.getQuestionAndAnswer());
     }
 }
